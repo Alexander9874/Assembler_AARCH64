@@ -1,52 +1,37 @@
-# Prerequisites
-*.d
+gnore ALL:
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+*
 
-# Linker output
-*.ilk
-*.map
-*.exp
+Unignore:
 
-# Precompiled Headers
-*.gch
-*.pch
+!.gitignore
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+!*.c
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+!*.cpp
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+!*.h
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+!*/
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+!*.md
+
+!*.txt
+
+!*.bin
+
+!*.pdf
+
+!*.dia
+
+!*.png
+
+# IDK:
+
+!*makefile
+
+!*Makefile
+
+# Assembler
+
+!*.s
