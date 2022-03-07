@@ -16,7 +16,7 @@ e:
 	.short	30
 	.text
 	.align	2
-	.global _start	
+	.global	_start	
 	.type	_start, %function
 _start:
 	adr	x0, a
@@ -29,7 +29,7 @@ _start:
 	ldrsh	w4, [x0]
 	adr	x0, e
 	ldrsh	w5, [x0]
-	add w6, w1, w2
+	add	w6, w1, w2
 	mul	w7, w4, w5
 	smull	x8, w6, w7
 	sdiv	x8, x8, x3
