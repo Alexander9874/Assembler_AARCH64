@@ -12,15 +12,17 @@
 res:
 	.skip	8
 a:
-	.short	-1
+	.short	-32768
 b:
-	.short	4
+	.short	-32767
 c:
-	.short	4
+//	.short	-32766
+	.short	-2
 d:
-	.short	4
+	.short	-1
 e:
-	.short	4
+//	.short	32767
+	.short	65534	
 	.text
 	.align	2
 	.global	_start
@@ -40,13 +42,13 @@ _start:
 	sdiv	w5, w5, w1		// w5 is (a*c)/b
 	mul	w6, w3, w1		// w6 is d*b
 	sdiv	w6, w6, w4		// w5 is (d*b)/e
-	add	w5, w5, w6, sxtw	// x5 is ((a*c)/b)+((d*b)/e)
+	add	w5, w5, w6		// x5 is ((a*c)/b)+((d*b)/e)
 	mul	w6, w2, w2		// w6 is c*c
 	sdiv	w6, w6, w0		// w6 is c*c/a
 	sdiv	w6, w6, w3		// w6 is (c*c)/(a*d)
-	add	x5, x5, x6		// res
+	sub	x5, x5, x6		// res
 	adr	x0, res
-	str	x8, [x0]
+	str	x5, [x0]
 	mov	x0, #0
 	mov	x8, #93
 	svc	#0
