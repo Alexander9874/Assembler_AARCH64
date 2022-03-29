@@ -42,17 +42,17 @@ _start:
 	ldrsh	w4, [x4]		// w4 is e
 	mul	w5, w0, w2		// w5 is a*c
 	
-	add	w10, w1, w2
-	add	w11, w4, w2
+//	add	w10, w1, w2
+//	add	w11, w4, w2
 
-//	sdiv	w5, w5, w1		// w5 is (a*c)/b
+	sdiv	w5, w5, w1		// w5 is (a*c)/b
 	
-	sdiv	w5, w5, w10
+//	sdiv	w5, w5, w10
 
 	mul	w6, w3, w1		// w6 is d*b
-//	sdiv	w6, w6, w4		// w5 is (d*b)/e
+	sdiv	w6, w6, w4		// w5 is (d*b)/e
 
-	sdiv	w6, w6, w11
+//	sdiv	w6, w6, w11
 
 	add	w5, w5, w6
 	sxtw	x5, w5			// x5 is ((a*c)/b)+((d*b)/e)
