@@ -6,10 +6,10 @@ LD = $(CROSS_COMPILE)ld
 ASFLAGS = -g
 LDFLAGS = -g -static
 
-SRCS = prog1.s
+SRCS = prog13.s
 OBJS = $(SRCS:.s=.o)
 
-EXE = prog1
+EXE = prog13
 
 all: $(SRCS) $(EXE)
 

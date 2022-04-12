@@ -8,7 +8,7 @@ m:
 	.word	5
 matrix:
 	.quad	4, 6, 1, 8, 2
-	.quad	1, 2, 3, 4, 5
+	.quad	1, 2, 3, 4, 5	
 	.quad	0, -7, 3, -1, -1
 maxs:
 	.skip	40
