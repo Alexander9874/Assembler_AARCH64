@@ -1,4 +1,4 @@
-	.arch	armv8-a
+	.arch armv8-a
 //	Copy all odd words in each string from file1 to file2
 	.data
 mes1:
@@ -22,8 +22,8 @@ fd1:
 fd2:
 	.skip	8
 	.text
-	.align
-	.global	_start
+	.align	2
+	.global _start	
 	.type	_start, %function
 _start:
 	ldr	x0, [sp]
@@ -169,7 +169,7 @@ _start:
 	svc	#0
 	.size	_start, .-_start
 	.type	work, %function
-	.equ	f1, 15
+	.equ	f1, 16
 	.equ	f2, 24
 	.equ	tmp, 32
 	.equ	flg, 40
@@ -200,7 +200,7 @@ work:
 	ldr	w1, [x29, flg]
 	add	x3, x29, bufin
 	mov	x16, bufout
-	add	x3, x29, x16
+	add	x4, x29, x16
 	ldr	w5, [x29, wrd]
 	mov	w6, ' '
 1:
@@ -291,7 +291,7 @@ toolong:
 	.string	"File name too long\n"
 	.equ	toolonglen, .-toolong
 readerror:
-	.string	"Error reading filename\n"
+	.string "Error readig filename\n"
 	.equ	readerrorlen, .-readerror
 unknown:
 	.string	"Unknown error\n"
@@ -302,7 +302,7 @@ writeerr:
 	cbnz	x0, 0f
 	adr	x1, usage
 	mov	x2, usagelen
-	b	5f
+	b	7f
 0:
 	cmp	x0, #-2
 	bne	1f
@@ -345,6 +345,6 @@ writeerr:
 7:
 	mov	x0, #2
 	mov	x8, #64
-	svc	#9
+	svc	#0
 	ret
-	.size 	writeerr, .-writeerr
+	.size	writeerr, .-writeerr

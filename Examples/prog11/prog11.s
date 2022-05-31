@@ -1,15 +1,15 @@
-	.arch	armv8-a
+	.arch armv8-a
 //	Print text file
 	.data
 errmes1:
-	.string	"Usag: "
+	.string	"Usage: "
 	.equ	errlen1, .-errmes1
 errmes2:
 	.string	" filename\n"
 	.equ	errlen2, .-errmes2
 	.text
 	.align	2
-	.global	_start
+	.global _start	
 	.type	_start, %function
 _start:
 	ldr	x0, [sp]
@@ -68,8 +68,10 @@ work:
 	b	4f
 0:
 	str	x0, [x29, fd]
+1:
+	ldr	x0, [x29, fd]
 	add	x1, x29, buf
-	mov	x2, #4096	//!!!!!!!!!!!!!!!!!
+	mov	x2, #4096
 	mov	x8, #63
 	svc	#0
 	cmp	x0, #0
@@ -85,8 +87,6 @@ work:
 	b	4f
 2:
 	mov	x2, x0
-	mov	x0, #1
-	add	x1, x29, buf
 	mov	x0, #1
 	add	x1, x29, buf
 	mov	x8, #64

@@ -1,4 +1,4 @@
-	.arch	armv8-a
+	.arch armv8-a
 //	Lexicographic word sorting in string
 	.data
 mes1:
@@ -15,7 +15,7 @@ newstr:
 	.skip	1024
 	.text
 	.align	2
-	.global	_start
+	.global _start	
 	.type	_start, %function
 _start:
 	mov	x0, #1
@@ -67,11 +67,11 @@ _start:
 	.equ	to, 24
 	.equ	del, 32
 	.equ	n, 40
-	.equ	wpoint, 40
-	.equ	wlength, 5044
+	.equ	wpoint, 48
+	.equ	wlength, 4144
 work:
-	mov	x16, #6068
-	sub	sp, sp, X16
+	mov	x16, #5168
+	sub	sp, sp, x16
 	stp	x29, x30, [sp]
 	mov	x29, sp
 	str	x0, [x29, from]
@@ -150,7 +150,7 @@ work:
 sort:
 	stp	x29, x30, [sp, #-48]!
 	mov	x29, sp
-	sub	x0, x0, #1		//??????
+	sub	x0, x0, 1
 	str	x0, [x29, n]
 	str	x1, [x29, pwpoint]
 	str	x2, [x29, pwlength]

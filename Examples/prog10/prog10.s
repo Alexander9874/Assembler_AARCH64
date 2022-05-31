@@ -1,8 +1,8 @@
-	.arch	armv8-a
-//	Revers symbols in words
+	.arch armv8-a
+//	Revers symbols in words	
 	.data
 mes1:
-	.ascii	"Enter string:	"
+	.ascii	"Enter string: "
 	.equ	len, .-mes1
 str:
 	.skip	1024
@@ -12,7 +12,7 @@ newstr:
 	.skip	1024
 	.text
 	.align	2
-	.global	_start
+	.global _start	
 	.type	_start, %function
 _start:
 	mov	x0, #1
