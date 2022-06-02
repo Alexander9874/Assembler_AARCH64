@@ -16,13 +16,13 @@ mes5:
 	.global	myexp
 	.type	myexp, %function
 myexp:
-	fmov	d5, #1.0
-	fmov	d1, d5
-	fmov	d2, d5
-	fmov	d3, d5
+	fmov	d5, #1.0		// d1 - d3 , d5
+	fmov	d1, d5			// set 1.0
+	fmov	d2, d5			//
+	fmov	d3, d5			//
 0:
-	fmov	d4, d2
-	fmul	d1, d1, d0
+	fmov	d4, d2			// d4 is d2
+	fmul	d1, d1, d0		// 
 	fdiv	d1, d1, d3
 	fadd	d2, d2, d1
 	fadd	d3, d3, d5
